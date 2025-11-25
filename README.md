@@ -1,4 +1,10 @@
+# ChatSC – Production-Ready System
+
+ChatSC เป็นระบบ Chat & Search อัจฉริยะที่สามารถเชื่อมต่อข้อมูลภายใน SC, TGN และ STW พร้อมสร้าง bot แชท และ pipeline สำหรับจัดการเอกสาร/ข้อความ/embeddings แบบอัตโนมัติ
+
 ---
+
+## **1️⃣ โครงสร้างระบบ**--
 
 ## **2️⃣ ความสามารถของ ChatSC**
 
