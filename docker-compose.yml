@@ -1,0 +1,28 @@
+version: '3.9'
+services:
+  api:
+    image: python:3.11
+    volumes:
+      - ./chatsc_prod:/app
+    working_dir: /app
+    command: uvicorn chatsc_prod:app --host 0.0.0.0 --port 8000
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+      - vector_db
+
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: chatsc
+      POSTGRES_PASSWORD: chatsc123
+      POSTGRES_DB: chatsc_prod
+    ports:
+      - "5432:5432"
+
+  vector_db:
+    image: milvusdb/milvus:v2.3.0
+    ports:
+      - "19530:19530"
+      - "9091:9091"
